@@ -1,3 +1,5 @@
+// IMPORTANT, COMPLETE REFACTOR
+
 /* Dungeon loot splitter Phase 1 */
 
 const lootItems = []

@@ -1,0 +1,50 @@
+<!-- // IMPORTANT, COMPLETE REFACTOR -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Emmanuelle">
+    <title>LootSystemTerminal2Interface</title>
+
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <h1>Loot Item System</h1>
+
+        <form class="loot-form">
+            <fieldset>
+                <legend>Enter Loot Item</legend>                
+                <label for="lootName">Loot:</label>
+                <input type="text" placeholder="Loot Name" id="lootName" name ="lootName">
+                <label for="lootValue">Value</label>
+                <input type="number" placeholder="Loot Value" id="lootValue" name="lootValue">
+                <input id="submitButton" type="button" value="Add Loot">
+                <!-- changed type to button vs submit so it doesnt reset for now -->
+            </fieldset>
+        </form>       
+    
+
+
+        <section class="lootItems">
+            <h2>Loot Items</h2>
+            <ul id="itemsList">
+                <li></li> <!--For clarity-->
+            </ul>
+        </section>
+        
+        <section class="totalValue">
+            <h2>Total value: </h2>
+            <p id="totalValue">0</p>
+        </section>
+
+        <section class="message">
+            <h2>Message:</h2>
+            <p id="Message">No current message</p>
+        </section>
+    </main>
+</body>
+</html>
