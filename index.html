@@ -5,12 +5,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Emmanuelle">
-    <title>LootSystemTerminal2Interface</title>
+    <title>Dungeon Loot Splitter</title>
 
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/script.js" defer></script>
 </head>
+<!-- Page title: Dungeon Loot Splitter
+Section: Party Setup, with Number of Party Members:
+Section: Add Loot, with Loot Name:, Loot Value:, and the Add Loot button
+Section: Loot List, with the items and running Total Loot
+Section: Split Loot, with the Split Loot button, Total Loot, and Loot Per Party Member
+Section: Logic Explanation, written in your own words -->
+<body>
+    <header>
+        <h1>Dungeon Loot Splitter</h1>
+    </header>
 
+    <main>
+        <section class="panel">
+            <h2>Party Setup</h2>
+            <label for="partyMembers">Number of Party Members</label>
+            <input type="number" id="partyMembers" name="partyMembers">
+            
+        </section>
+
+        <section class="panel">
+            <h2>Add Loot</h2>
+            Section: Add Loot, with Loot Name:, Loot Value:, and the Add Loot button
+            <fieldset>
+                <label for="lootName">Loot Name: </label>
+                <input type="text" id="lootName" name="AddLoot" >
+                <label for="lootValue">Loot Value: </label>
+                <input type="number" id="lootValue" name="lootValue">
+            </fieldset>
+
+        </section>
+
+        <section class="panel">
+            <h2>Loot List</h2>
+            <ul id="lootList">
+                <li>Brown Shoe</li>
+            </ul>
+            <p>Total Loot: </p>
+            lower Left
+        </section>
+
+        <section class="panel">
+            <h2>Split Loot</h2>
+            <input id="submitButton" type="button" value="Split Loot">
+            <p>Total Loot| Loot Per Party Member</p>
+            lower Right
+        </section>
+
+        <section class="reflection">
+            <h2>Logic Explanation</h2>
+            <p>Using the functions, we do it up</p>
+            Bottom
+        </section>
+    </main>
+</body>
+
+
+<!-- I've added the required sections with relevant details. Now I need to ensure the buttons are in place, as well as the input fields. Then I'll CSS it, and program it. -->
+
+<!-- 
 <body>
     <main>
         <h1>Loot Item System</h1>
@@ -23,7 +81,7 @@
                 <label for="lootValue">Value</label>
                 <input type="number" placeholder="Loot Value" id="lootValue" name="lootValue">
                 <input id="submitButton" type="button" value="Add Loot">
-                <!-- changed type to button vs submit so it doesnt reset for now -->
+                <!-- changed type to button vs submit so it doesnt reset for now ->
             </fieldset>
         </form>       
     
@@ -32,7 +90,7 @@
         <section class="lootItems">
             <h2>Loot Items</h2>
             <ul id="itemsList">
-                <li></li> <!--For clarity-->
+                <li></li> <!--For clarity->
             </ul>
         </section>
         
@@ -46,5 +104,8 @@
             <p id="Message">No current message</p>
         </section>
     </main>
-</body>
+</body> -->
+
+
+
 </html>

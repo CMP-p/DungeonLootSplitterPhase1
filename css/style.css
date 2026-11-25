@@ -1,13 +1,12 @@
 /* // IMPORTANT, COMPLETE REFACTOR */
 
 /* For this assignment, create a basic styled interface with readable fonts, appropriate spacing, organized form fields, and basic colors. */
-main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 300px;
-    background-color: rgb(65, 17, 1);
-    border-radius: 10px;
+
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    border: 1px solid black;
 }
 
 h1 {
@@ -21,24 +20,65 @@ h1 {
     padding: 5px;
 }
 
-
-form.loot-form {
-    padding: 5px;
+h2 {
+    border: none;
 }
 
+body {
+    background-color: rgb(65, 17, 1);
+    color: rgb(228, 90, 44);
+}
+
+header {
+    border: solid black;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    
+}
+section {
+    background-color: #1565;
+    margin: 10px;
+    border: 3px solid #82e;
+    border-top: none;
+    border-bottom: none;
+    border-radius: 30px;
+    margin: 10px;
+    padding: 10px;
+}
+.panel {
+    content: attr(); /*empty*/
+}
+
+input {
+    background-color: #82e5;
+    color: #fff;
+}
+
+@media (min-width: 768px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .reflection {
+        grid-column: span 2;
+    }
+}
+
+/* 
 fieldset {
     background-color: #1565;
 }
 legend {
     color: white;
     font-weight: bold;
-    font-size: 18px;
-    border: 1px solid black;
-    background-color: #82e7;
 }
 
 label {
-    font-family: sans-serif;
     color: white;
 }
 
@@ -48,10 +88,6 @@ input {
 
 h2 {
     color: rgb(228, 90, 44);
-    /* border: solid black 1px; */
-    margin: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
 }
 
 p {
@@ -60,30 +96,17 @@ p {
 
 ul {
     text-align: left;
-    /* border: 1px red solid; */
-    padding-right: 30px;
-    padding-left: 20px;
-    margin-bottom: 0px;
 }
 
 li {
     color: white;
-    text-align: left;
 }
 
-section.lootItems{
-    border: 3px solid #82e;
-    border-top: none;
-    border-bottom: none;
-    border-radius: 30px;
-    margin: 10px;
-    padding: 10px;
-}
 
 section.totalValue {
     display: flex;
     flex-direction: row;
-    /* border: 1px solid blueviolet; */
+    
     border-bottom: 3px solid #a42;
     align-items: center;
 }
@@ -102,4 +125,180 @@ section.message p {
     font-size: 20px;
     margin: 10px;
 }
+ */
 
+CANVAS.INSTRUCTION#BELOW {
+    text-decoration: solid;
+}
+ /* 
+ Dungeon Loot Splitter: Phase 1
+Build an interactive, responsive browser application.
+
+1. Overview and Learning Objectives 
+Read this entire page before beginning.
+Last week, you moved your Loot System from the terminal into a browser-based, event-driven application. You used buttons, event listeners, arrays of objects, and DOM manipulation to add loot, display items, and calculate their total value. This week, you'll build on that foundation by adding party size and loot splitting, while reorganizing the interface into a structured, responsive layout using CSS Grid.
+
+Users will enter a party size, add loot, see a running total, and split the total among party members. Buttons will trigger JavaScript functions, and the page will update without prompts or alerts.
+
+Important: Phase 1 keeps the loot array in memory while the page is open. You do not need to save data across page reloads.
+
+Do not use alert(), prompt(), or document.write(). Do not use console.log() to display results to users. All messages and results belong on the web page.
+
+Learning Objectives
+You will demonstrate:
+
+• Use of arrays to store structured data
+• Use of objects inside arrays
+• Use of loops to calculate totals
+• Use of loops to render content
+• Use of conditional validation using if statements
+• Dynamic DOM update
+• Use of event listeners
+• Separation of HTML, CSS, and JavaScript
+• Basic responsive design
+
+2. What Your Application Must Do
+Party setup
+Provide a number input labeled Number of Party Members:
+Allow whole-number party sizes of 1 or greater. Check the party size before splitting loot.
+Users may add loot before entering a valid party size.
+Add loot
+Provide a text input labeled Loot Name:, a number input labeled Loot Value: that accepts cents, and an Add Loot button.
+When Add Loot is clicked, check the name and value. If valid, add an object to the loot array and update the visible loot list and running total.
+Reject an empty loot name, a missing or invalid number, and a negative value. Show a helpful message on the page.
+Loot list and totals
+Show every added loot item in the Loot List section.
+Show a running value labeled Total Loot in the Loot List section.
+Use loops to render the list and calculate the total from the array.
+Show money with two decimal places.
+Split loot
+Provide a Split Loot button.
+When clicked, check that the party size is valid and that there is loot to split.
+In the Split Loot section, show Total Loot and Loot Per Party Member. Divide the total evenly among party members.
+Both Total Loot displays refer to the same loot total. Calculate the total from the array rather than maintaining two separate totals.
+Edge cases
+Handle an empty loot list, missing or invalid party size, negative loot values, and empty inputs. Display any error or status message in the page, not in an alert.
+
+3. Required Interface and Responsive Layout
+Use these exact visible titles and labels. You may choose your own colors, spacing, and decorative styling as long as the interface is readable and accessible.
+
+Page title: Dungeon Loot Splitter
+Section: Party Setup, with Number of Party Members:
+Section: Add Loot, with Loot Name:, Loot Value:, and the Add Loot button
+Section: Loot List, with the items and running Total Loot
+Section: Split Loot, with the Split Loot button, Total Loot, and Loot Per Party Member
+Section: Logic Explanation, written in your own words
+On screens narrower than 768px
+Use a mobile-first layout with sections stacked in this order: title, Party Setup, Add Loot, Loot List, Split Loot, Logic Explanation.
+
+At 768px and wider
+Use a two-column grid with four horizontal layout rows, with the title above the grid:
+
+Row 1: Dungeon Loot Splitter title across the full page width, above the two-column grid.
+Row 2: Party Setup on the left; Add Loot on the right.
+Row 3: Loot List and running Total Loot on the left; Split Loot button and results on the right.
+Row 4: Logic Explanation across both columns.
+The layout must visibly change at the breakpoint. Use at least one CSS media query with min-width: 768px.
+
+4. Project Files and Starter Code
+Create a new Repo named DungeonLootSplitterPhase1
+
+Use this required repository structure.
+
+/index.html
+/css/style.css
+/js/script.js
+/images/validation.png
+All HTML must be in /index.html.
+All image files must be in /images.
+All CSS must be in /css/style.css.
+All JavaScript must be in /js/script.js.
+
+The validation.png file is a screenshot showing the results of your W3C HTML validation. 
+
+Code Snippets
+These snippets are starting points, not finished solutions. Replace the placeholder headings with the required section titles and add the inputs, buttons, results, and any needed HTML elements.
+
+
+style.css starter
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+}
+
+header {
+}
+
+main {
+}
+
+.panel {
+}
+
+@media (min-width: 768px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .reflection {
+        grid-column: span 2;
+    }
+}
+The HTML starter shows the required sections, but you must complete the layout and styling. Use semantic elements such as <header>, <main>, and <section>. See MDN: HTML accessibility and Section 508 accessible web design guidance.
+
+5. JavaScript Implementation Requirements
+State: array of objects
+Declare one loot array near the top of js/script.js so it remains available across button clicks. Store each item as an object with at least name and value properties.
+
+Loops
+Use a traditional indexed for loop to calculate total loot from the array.
+Use a loop to build the visible loot list in the DOM.
+Put loops inside functions in js/script.js, not inside HTML.
+Functions and events
+Define at least addLoot(), renderLoot(), and splitLoot() in js/script.js.
+Register event listeners in js/script.js for the Add Loot and Split Loot buttons.
+Use only getElementById() to access DOM elements.
+Validation and conditional logic
+Use if statements to check inputs before adding loot or calculating a split.
+Check that the loot name is not empty and the loot value is a valid, nonnegative number.
+Before splitting, check that party size is a whole number of at least 1 and that loot exists.
+Display validation messages in the interface.
+Currency formatting
+Display money with two decimal places. Use toFixed(2) at minimum.
+
+6. Reflection and Optional Extra Credit
+Logic Explanation and flow sketch
+In the Logic Explanation section at the bottom of your page, explain in your own words how the loot array works, where you use loops, and where and how if statements make decisions.
+
+Also create a simple sketch of your logic flow. It may be hand-drawn or digital. Submit the sketch as a JPG or PNG image.
+
+Optional extra credit
+You may add any of these features:
+
+A rarity system that changes loot value
+A guild tax when total loot exceeds a threshold
+The ability to remove loot items
+Automatic recalculation of the split whenever loot is added
+Enhanced visual styling beyond the minimum requirements
+To be considered for extra credit: Summarize your bonus features in your submission comments, not just in code comments. Each approved feature may earn additional credit; bonus points are capped.
+
+7. Submission Requirements
+Submit all three:
+
+The URL of your GitHub repository
+The URL of your working GitHub Pages deployment
+Your logic-flow sketch as a JPG or PNG image
+Before submitting, check the following:
+
+Your deployed application works without errors or warnings, and all file paths and assets load correctly.
+Your repo file structure is correct as shown in Section 4.
+Your HTML passes W3C validation and includes the usual screenshot of the validation results as /images/validation.png.
+Your HTML file includes all the required metatags.
+Your page uses semantic HTML, correctly associated form labels, sufficient color contrast, and accessible controls, consistent with the assignment’s accessibility requirements.
+Your code comments explain important logic decisions rather than repeating obvious syntax.
+ */
