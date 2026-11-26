@@ -23,44 +23,45 @@ Section: Logic Explanation, written in your own words -->
 
     <main>
         <section class="panel">
-            <h2>Party Setup</h2>
-            <label for="partyMembers">Number of Party Members</label>
+            <h2>  Party Setup</h2>
+            <label for="partyMembers">Number of Party Members: </label>
             <input type="number" id="partyMembers" name="partyMembers">
-            
         </section>
 
         <section class="panel">
-            <h2>Add Loot</h2>
-            Section: Add Loot, with Loot Name:, Loot Value:, and the Add Loot button
+            <h2>  Add Loot</h2>
             <fieldset>
                 <label for="lootName">Loot Name: </label>
                 <input type="text" id="lootName" name="AddLoot" >
                 <label for="lootValue">Loot Value: </label>
                 <input type="number" id="lootValue" name="lootValue">
+                <input id="submitButton" type="button" value="Add Loot">
             </fieldset>
-
         </section>
 
         <section class="panel">
-            <h2>Loot List</h2>
-            <ul id="lootList">
+            <h2>  Loot List</h2>
+            <ul id="itemsList" class="display">
                 <li>Brown Shoe</li>
             </ul>
-            <p>Total Loot: </p>
-            lower Left
+            <div class="totals">
+                <p>Total Loot: </p>
+                <p id="totalValue" class="display">0</p>
+            </div>
         </section>
 
         <section class="panel">
-            <h2>Split Loot</h2>
+            <h2>  Split Loot</h2>
             <input id="submitButton" type="button" value="Split Loot">
-            <p>Total Loot| Loot Per Party Member</p>
-            lower Right
+            <p>Total Loot: </p>
+            <p id="partyTotalValue" class="display">0</p>
+            <p>Loot Per Party Member</p>
+            <p id="perMember" class="display">0</p>
         </section>
 
         <section class="reflection">
-            <h2>Logic Explanation</h2>
-            <p>Using the functions, we do it up</p>
-            Bottom
+            <h2>    Logic Explanation</h2>
+            <p id="Message">Using the functions, we do it up</p>
         </section>
     </main>
 </body>

@@ -16,7 +16,7 @@ submitButton.addEventListener('click', updateDom)
 
 function updateDom() {
     const name = document.getElementById('lootName').value
-    const value = parseInt(document.getElementById('lootValue').value)
+    const value = parseFloat(document.getElementById('lootValue').value)
     const message = document.getElementById('Message')
     const ulItems = document.getElementById('itemsList')
     const totalValue = document.getElementById('totalValue')

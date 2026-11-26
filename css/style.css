@@ -6,10 +6,14 @@
 * {
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
-h1 {
+header {
+    box-sizing: border-box;
+}
+
+h1 { /*tite*/
     text-align: center;
     color: rgb(195, 159, 0);
     font-size: 25px;
@@ -20,17 +24,22 @@ h1 {
     padding: 5px;
 }
 
+
 h2 {
     border: none;
+    border-bottom: 3px double rgb(195, 159, 0);
+    border-radius: 20px 10px;
+    margin-top: 4px;
+    color: rgb(229, 80, 31);
 }
 
 body {
     background-color: rgb(65, 17, 1);
-    color: rgb(228, 90, 44);
+    color: rgb(195, 159, 0);
 }
 
-header {
-    border: solid black;
+.display {
+    color: #fff;
 }
 
 main {
@@ -42,19 +51,36 @@ section {
     background-color: #1565;
     margin: 10px;
     border: 3px solid #82e;
-    border-top: none;
-    border-bottom: none;
+    border-top: 1px;
+    border-bottom: 1px;
     border-radius: 30px;
     margin: 10px;
     padding: 10px;
+    padding-top: 0px;
+}
+div.totals {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding-left: 10px;
 }
 .panel {
     content: attr(); /*empty*/
 }
+ul#itemsList {
+    border: groove rgb(195, 159, 0) 4px;
+    max-width: 65%; 
+    padding-left: 15px; 
+    margin-left: 15px;
+}
 
 input {
-    background-color: #82e5;
+    background-color: #82Ea;
     color: #fff;
+}
+
+input:active {
+    background-color: #82e5;
 }
 
 @media (min-width: 768px) {
@@ -68,64 +94,6 @@ input {
         grid-column: span 2;
     }
 }
-
-/* 
-fieldset {
-    background-color: #1565;
-}
-legend {
-    color: white;
-    font-weight: bold;
-}
-
-label {
-    color: white;
-}
-
-input {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-h2 {
-    color: rgb(228, 90, 44);
-}
-
-p {
-    color: #fff;
-}
-
-ul {
-    text-align: left;
-}
-
-li {
-    color: white;
-}
-
-
-section.totalValue {
-    display: flex;
-    flex-direction: row;
-    
-    border-bottom: 3px solid #a42;
-    align-items: center;
-}
-p#totalValue{
-    padding: 0px;
-}
-
-section.message {
-    margin-top: 10px;
-    border: 1px solid yellow;
-    margin: 10px;
-    text-align: center;
-}
-section.message p {
-    color: gray;
-    font-size: 20px;
-    margin: 10px;
-}
- */
 
 CANVAS.INSTRUCTION#BELOW {
     text-decoration: solid;
